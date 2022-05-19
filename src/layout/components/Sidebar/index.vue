@@ -34,7 +34,8 @@ export default {
   computed: {
     ...mapGetters(['sidebar']),
     routes() {
-      return this.$router.options.routes
+      // 需要遍历的应该是仓库中计算完毕的全部路由
+      return this.$store.state.user.resultAllRoutes
     },
     activeMenu() {
       const route = this.$route
